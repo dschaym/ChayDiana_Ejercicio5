@@ -1,4 +1,6 @@
-﻿Console.WriteLine("EVALUACION DE PRESTAMO BANCARIO POR REGLAS");
+﻿using System.Threading.Channels;
+
+Console.WriteLine("EVALUACION DE PRESTAMO BANCARIO POR REGLAS");
 Console.WriteLine("- Tipo de solicitante -");
 Console.WriteLine("1. Empleado fijo");
 Console.WriteLine("2. Empleado temporal");
@@ -27,3 +29,31 @@ int historialCrediticio = int.Parse(Console.ReadLine());
 Console.WriteLine("Tiene fiador? (S/N)");
 string fiador = Console.ReadLine().ToUpper();
 
+if (tipoSolicitante < 1 || tipoSolicitante > 4)
+{
+    Console.WriteLine("Tipo de solicitante fuera de rago (1-4)");
+}
+else if (historialCrediticio < 1 || historialCrediticio > 4)
+{
+    Console.WriteLine("Historial crediticio fuera de rago (1-4)");
+}
+else if (ingresoMensual < 0)
+{
+   Console.WriteLine("Ingreso mensual no puede ser negativo");
+}
+else if (antiguedadmesual < 0)
+{
+    Console.WriteLine("Antigüedad laboral no puede ser negativa");
+}
+else if (monto < 0)
+{
+    Console.WriteLine("Monto solicitado no puede ser negativo");
+}
+else if (historialCrediticio < 1 || historialCrediticio > 4)
+{
+    Console.WriteLine("Historial crediticio fuera del rango (1-4)");
+}
+else if (fiador != "S" || fiador != "N")
+{
+    Console.WriteLine("Respuesta invalida (S/N)");
+}

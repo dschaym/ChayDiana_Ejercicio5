@@ -51,7 +51,7 @@ else if (historialCrediticio < 1 || historialCrediticio > 4)
 {
     Console.WriteLine("Historial crediticio fuera del rango (1-4)");
 }
-else if (fiador != "S" || fiador != "N")
+else if (fiador != "S" && fiador != "N")
 {
     Console.WriteLine("Respuesta invalida (S/N)");
 }
@@ -329,3 +329,6 @@ switch (tipoSolicitante)
         }
         break;
 }
+Console.WriteLine("- RESULTADOS DE EVALUACION -");
+Console.WriteLine($"Decisión: {resultado}");
+Console.WriteLine($"Motivo principal: {motivo}");
